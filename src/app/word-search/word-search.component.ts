@@ -10,9 +10,8 @@ import {FormsModule} from '@angular/forms';
   styleUrl: './word-search.component.css',
 })
 export class WordSearchComponent {
-  numberOfWords = signal(2);
-  searchedWord = signal('');
-  searchedWordLetters = computed(() => this.searchedWord().split(''));
+  readonly numberOfWords = signal(2);
+  readonly searchedWord = signal('');
   readonly wordsList = signal(['gros', 'gras', 'graisse', 'agressif', 'go', 'ros', 'gro']);
   readonly searchResult = computed(() => this.searchWord());
 
@@ -24,10 +23,10 @@ export class WordSearchComponent {
 
       let add = false;
       let diff = 0;
-      for (let searchedLetter of this.searchedWordLetters()) {
+      for (let searchedLetter of this.searchedWord().split('')) {
         if (word.includes(searchedLetter)) {
           const wordIndex = word.indexOf(searchedLetter)
-          const searchedWordIndex = this.searchedWordLetters().indexOf(searchedLetter);
+          const searchedWordIndex = this.searchedWord().indexOf(searchedLetter);
           if (wordIndex >= searchedWordIndex) {
             if (word.length - wordIndex >= this.searchedWord().length - searchedWordIndex) {
               add = true;
