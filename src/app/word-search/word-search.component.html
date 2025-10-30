@@ -1,5 +1,5 @@
 <h3>Liste de mots : </h3>
-@for (word of wordsList(); track word; let i = $index) {
+@for (word of wordsList(); track word) {
   <strong>{{word}}</strong>
   @if ($index < wordsList().length - 1) {
     <strong>, </strong>
