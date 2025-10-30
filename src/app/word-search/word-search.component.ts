@@ -27,9 +27,12 @@ export class WordSearchComponent {
         if (word.includes(searchedLetter)) {
           const wordIndex = word.indexOf(searchedLetter)
           const searchedWordIndex = this.searchedWord().indexOf(searchedLetter);
+          // Check if the letters before the index can be contained in the word
           if (wordIndex >= searchedWordIndex) {
+            // Check if the letters after the index can be contained in the word
             if (word.length - wordIndex >= this.searchedWord().length - searchedWordIndex) {
               add = true;
+              // Check all searched letters around the index
               for (let i = (wordIndex - searchedWordIndex); i <= (wordIndex + this.searchedWord().length - searchedWordIndex); i++) {
                 if (word[i] !== this.searchedWord()[i]) {
                   diff++;
