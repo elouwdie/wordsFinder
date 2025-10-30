@@ -1,0 +1,10 @@
+<label for="name">Mot à rechercher: </label>
+<input id="name" type="text" [(ngModel)]="searchedWord">
+<br>
+<br>
+<label for="number">Nombre de mots voulu: </label>
+<input id="number" type="text" [(ngModel)]="numberOfWords">
+<br>
+<br>
+<strong>Résultat :</strong>
+<p>{{searchResult()}}</p>
