@@ -1,3 +1,12 @@
+<h3>Liste de mots : </h3>
+@for (word of wordsList(); track word; let i = $index) {
+  <strong>{{word}}</strong>
+  @if ($index < wordsList().length - 1) {
+    <strong>, </strong>
+  }
+}
+<br>
+<br>
 <label for="name">Mot à rechercher: </label>
 <input id="name" type="text" [(ngModel)]="searchedWord">
 <br>

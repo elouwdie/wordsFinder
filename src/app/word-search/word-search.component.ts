@@ -2,7 +2,7 @@ import {Component, computed, signal} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-word-search',
   imports: [
     FormsModule
   ],
